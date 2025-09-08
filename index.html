@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <body>
+    <ul id="todosContainer"></ul>
+    <!-- Template -->
+    <template id="cardTemplate">
+      <li
+        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      >
+        <h5
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        ></h5>
+        <p class="font-normal text-gray-700 dark:text-gray-400"></p>
+        <button
+          type="button"
+          class="delete-btn focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+        >
+          Delete
+        </button>
+      </li>
+    </template>
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
