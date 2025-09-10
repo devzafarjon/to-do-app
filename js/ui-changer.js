@@ -7,11 +7,13 @@ export function uiChanger(todos) {
     const clone = elCardTemplate.cloneNode(true).content
 
     const elTitle = clone.querySelector("h5")
+    const elComplated = clone.querySelector("span")
     const elDeleteButton = clone.querySelector(".delete-btn")
     const elDescription = clone.querySelector("p")
 
     elTitle.innerText = element.title
     elDescription.innerText = element.description
+    elComplated.innerText = element.isComplated ? "✅" : "❌"
     elDeleteButton.id = element.id
 
     elDeleteButton.addEventListener("click", (event) => {

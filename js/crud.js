@@ -16,3 +16,22 @@ export function deleteTodo(id) {
   })
   changeTodos(result)
 }
+
+// Add todo
+
+export function addTodo(obj) {
+  todos.push(obj)
+
+  changeTodos(todos)
+}
+
+// Edit to do
+export function editTodo(obj) {
+  const result = todos.map((element) => {
+    if (element.id === obj.id) {
+      return obj
+    } else {
+      return element
+    }
+  })
+}
