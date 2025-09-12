@@ -10,6 +10,51 @@ import { uiChanger } from "./ui-changer.js"
 
 uiChanger(todos)
 
+// Theme initialization and toggle
+const THEME_KEY = "theme"
+function applyTheme(theme) {
+  const root = document.documentElement
+  if (theme === "dark") {
+    root.classList.add("dark")
+  } else {
+    root.classList.remove("dark")
+  }
+  const btn = document.getElementById("themeToggle")
+  if (btn) {
+    const icon = btn.querySelector(".icon")
+    const label = btn.querySelector(".label")
+    if (theme === "dark") {
+      if (icon) icon.textContent = "☀️"
+      if (label) label.textContent = "Light"
+    } else {
+      if (icon) icon.textContent = "🌙"
+      if (label) label.textContent = "Dark"
+    }
+  }
+}
+
+try {
+  const stored = localStorage.getItem(THEME_KEY)
+  const prefersDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  applyTheme(stored || (prefersDark ? "dark" : "light"))
+} catch (e) {
+  applyTheme("light")
+}
+
+const themeToggleBtn = document.getElementById("themeToggle")
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", () => {
+    const isDark = document.documentElement.classList.contains("dark")
+    const next = isDark ? "light" : "dark"
+    applyTheme(next)
+    try {
+      localStorage.setItem(THEME_KEY, next)
+    } catch (e) {}
+  })
+}
+
 elAddBtn.addEventListener("click", () => {
   const title = elInputTitle.value
   const description = elTextareaDescription.value

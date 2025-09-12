@@ -9,9 +9,19 @@
   <body>
     <div class="min-h-dvh bg-gradient-to-b from-slate-50 to-white">
       <div class="max-w-4xl mx-auto p-6 sm:p-8">
-        <h1 class="text-3xl font-bold text-slate-900 mb-6 tracking-tight">
-          Todo App
-        </h1>
+        <div class="flex items-center justify-between mb-6">
+          <h1 class="text-3xl font-bold text-slate-900 tracking-tight">
+            Todo App
+          </h1>
+          <button
+            id="themeToggle"
+            type="button"
+            class="inline-flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-slate-200"
+          >
+            <span class="icon">🌙</span>
+            <span class="label">Dark</span>
+          </button>
+        </div>
         <div
           class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-10"
         >
