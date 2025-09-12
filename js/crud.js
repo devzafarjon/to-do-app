@@ -25,7 +25,7 @@ export function addTodo(obj) {
   changeTodos(todos)
 }
 
-// Edit to do
+// Edit todo
 export function editTodo(obj) {
   const result = todos.map((element) => {
     if (element.id === obj.id) {
@@ -34,4 +34,5 @@ export function editTodo(obj) {
       return element
     }
   })
+  changeTodos(result)
 }

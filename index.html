@@ -7,66 +7,116 @@
     <link rel="stylesheet" href="./css/output.css" />
   </head>
   <body>
-    <div>
-      <div>
-        <label for="title" class="block mb-2 text-sm font-medium text-gray-900"
-          >To do nomi</label
+    <div class="min-h-dvh bg-gradient-to-b from-slate-50 to-white">
+      <div class="max-w-4xl mx-auto p-6 sm:p-8">
+        <h1 class="text-3xl font-bold text-slate-900 mb-6 tracking-tight">
+          Todo App
+        </h1>
+        <div
+          class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm mb-10"
         >
-        <input
-          type="text"
-          id="title"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Todo nomini kiriting..."
-          required
-        />
+          <label
+            for="title"
+            class="block mb-2 text-sm font-medium text-slate-900"
+            >To do nomi</label
+          >
+          <input
+            type="text"
+            id="title"
+            class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
+            placeholder="Todo nomini kiriting..."
+            required
+          />
 
-        <label
-          for="description"
-          class="block mb-2 text-sm font-medium text-gray-900"
-          >To do uchun izoh kirting...</label
+          <label
+            for="description"
+            class="block mb-2 text-sm font-medium text-slate-900"
+            >To do uchun izoh kirting...</label
+          >
+          <textarea
+            id="description"
+            rows="4"
+            class="block p-3 w-full text-sm text-slate-900 bg-slate-50 rounded-lg border border-slate-300 focus:ring-blue-500 focus:border-blue-500"
+            placeholder="To do uchun izoh yozing..."
+          ></textarea>
+          <input
+            id="complated"
+            type="checkbox"
+            value=""
+            class="w-4 h-4 text-blue-600 bg-slate-50 border-slate-300 rounded-sm focus:ring-blue-500"
+          />
+          <label for="complated" class="ms-2 text-sm font-medium text-slate-900"
+            >Bajarilgami</label
+          >
+          <br />
+          <button
+            id="addBtn"
+            type="button"
+            class="mt-3 inline-flex items-center gap-2 py-2.5 px-5 me-2 mb-2 text-sm font-medium text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-lg border border-transparent hover:from-violet-700 hover:to-fuchsia-700 focus:outline-none focus:z-10 focus:ring-4 focus:ring-fuchsia-200"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-4 h-4"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M20.03 4.97a.75.75 0 0 1 0 1.06l-9.75 9.75a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06L9.75 14.19l9.22-9.22a.75.75 0 0 1 1.06 0Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Tasdiqlash
+          </button>
+        </div>
+        <div
+          id="emptyState"
+          class="hidden border border-dashed border-slate-300 rounded-2xl p-12 text-center text-slate-500"
         >
-        <textarea
-          id="description"
-          rows="4"
-          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="To do uchun izoh yozing..."
-        ></textarea>
-        <input
-          id="complated"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <label
-          for="complated"
-          class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Bajarilgami</label
-        >
-        <button
-          id="addBtn"
-          type="button"
-          class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-        >
-          Tasdiqlash
-        </button>
+          <div
+            class="mx-auto mb-3 w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="w-6 h-6 text-slate-400"
+            >
+              <path
+                d="M3 6a1 1 0 011-1h8a1 1 0 110 2H4a1 1 0 01-1-1zM3 12a1 1 0 011-1h14a1 1 0 110 2H4a1 1 0 01-1-1zM3 18a1 1 0 011-1h10a1 1 0 110 2H4a1 1 0 01-1-1z"
+              />
+            </svg>
+          </div>
+          <p class="text-sm">
+            Hozircha hech qanday todo yo'q. Yangi vazifa qo'shing.
+          </p>
+        </div>
+        <ul id="todosContainer" class="mt-6 grid gap-6 sm:grid-cols-2"></ul>
       </div>
     </div>
-    <ul id="todosContainer"></ul>
     <!-- Template -->
     <template id="cardTemplate">
       <li
-        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+        class="block p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
       >
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          class="mb-2 text-xl font-semibold tracking-tight text-slate-900"
         ></h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400"></p>
-        <span></span>
+        <p class="font-normal text-slate-600"></p>
+        <span
+          class="inline-block mt-2 text-xs px-2.5 py-1 rounded-full font-medium"
+        ></span>
         <button
           type="button"
-          class="delete-btn focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+          class="delete-btn focus:outline-none text-white bg-gradient-to-r from-rose-600 to-red-600 hover:from-rose-700 hover:to-red-700 focus:ring-4 focus:ring-rose-200 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2 mt-3"
         >
           Delete
+        </button>
+        <button
+          type="button"
+          class="edit-btn focus:outline-none text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 focus:ring-4 focus:ring-indigo-200 font-medium rounded-lg text-xs px-3 py-2 me-2 mb-2 mt-3"
+        >
+          Edit
         </button>
       </li>
     </template>

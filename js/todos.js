@@ -1,19 +1,22 @@
 import { uiChanger } from "./ui-changer.js"
 
-// export let todos = localStorage.getItem("todos")
-//   ? JSON.parse(localStorage.getItem("todos"))
-//   : []
-export let todos = [
-  {
-    id: 1,
-    title: "Todo 1",
-    description: "Nima gap 1",
-    isComplated: true,
-  },
-]
+export let todos = []
+
+// Initialize from localStorage on module load
+try {
+  const stored = localStorage.getItem("todos")
+  todos = stored ? JSON.parse(stored) : []
+} catch (error) {
+  todos = []
+}
+
+// Render initial UI with current todos
+uiChanger(todos)
 
 export function changeTodos(value) {
   todos = value
-  localStorage.setItem("todos", JSON.stringify(todos))
+  try {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  } catch (error) {}
   uiChanger(todos)
 }
